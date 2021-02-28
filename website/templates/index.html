@@ -11,24 +11,25 @@
     
     <header>
         <nav class="navbar">
-            <span id="navb"><a href="/">Home</a>
-            <a href="/howitworks" id='hiw'>How It Works</a>
+            <img style="width:250px;height:100%;"class = "icon" src="{{url_for('static', filename='logo_sr.png')}}" />
+            <span id="navb"><a href="/">Try It Out!</a>
+            <!--<a href="/howitworks" id='hiw'>How It Works</a>-->
             <a href="/aboutus" id='aboutus'>About Us</a></span>
-            <img src="{{url_for('static', filename='logo_sr.png')}}" />
+            
         </nav>
     </header>
 
     <body>
-        <div class="container">
+        <div style="padding:100px" class="container">
             <div class="row">
-              <div style="background-color: white;"class="col-sm">
-                <img style="width:50px;height:90px;"class = "icon" src="{{url_for('static', filename='fileicon.svg')}}" />
+              <div style="background-color: #F4F8F9;margin-top:80px"class="col-sm">
+                <img style="width:75px;height:135px;"class = "icon" src="{{url_for('static', filename='fileicon.svg')}}" />
                 <p>Summarize Articles, Speeches, and more!</p>
-                <p>Use our summarizer to quickly<br/> convert lengthy text<br/> into short, summarized text.</p>
+                <p>Use our summarizer to quickly convert<br/> lengthy text into short, summarized text. <br/>Decrease text by up to 80%!</p>
               </div>
-              <div style="margin-top:50px"class="col-sm">
+              <div style="margin-top:130px"class="col-sm">
                 <form action = "/results" method = "post">  
-                  <p>Text Link:</p>
+                  <p><b>Insert Text Link:</b></p>
                   <p><input style="text-align:left;" class="text-box"type="text" name="nm"/></p>
                   <p><input class="button" type="submit" name="nm" value="Summarize Text"/></p>
               </form>  
@@ -36,13 +37,13 @@
             </div>
           </div>
 
-          <div style="background:linear-gradient(180deg, #F4F8F9 44.19%, #07244F 95.33%);height:200px;margin-top:50px" class="container-fluid">
+          <div style="background:linear-gradient(180deg, #F4F8F9 44.19%, #07244F 95.33%);height:300px;margin-top:50px" class="container-fluid">
             </div> 
         </div>
 
 
           <div style="background:#07244F;height:500px" class="container-fluid">
-            <h2 style="padding:50px">Meet The Masterminds</h1>
+            <h2 style="padding:100px">Meet The Masterminds</h2>
             <div class="row">
               <div class="col-sm">
                 <img class = "icon" src="{{url_for('static', filename='aisha-icon.svg')}}" />
