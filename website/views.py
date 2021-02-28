@@ -17,11 +17,19 @@ def about_us():
 @views.route('/results', methods=['GET', 'POST'])
 def results():
     if request.method == 'POST':
-        link = request.form["nm"]
-        created_summary = get_summary(link)
+        link = request.form["link"]
+        dictStr = str(request.form.values)
+
+        length = ""
+        
+        if "Short Summary" in dictStr:
+            length = "short"
+        else:
+            length = "long"
+        created_summary = get_summary(link,length)
     return render_template("results.html", summary = created_summary)
 
-def get_summary(link):
+def get_summary(link, length):
     import nltk
     from nltk.corpus import stopwords
     from nltk.tokenize import word_tokenize, sent_tokenize
@@ -30,6 +38,7 @@ def get_summary(link):
     import bs4 as bs
     import urllib.request
     import re
+    from scipy import stats
 
     scraped_data = urllib.request.urlopen(link)
     article = scraped_data.read()
@@ -73,19 +82,77 @@ def get_summary(link):
     
     average = int(sumValues / len(sentenceValue))
 
-    summary = ''
-    for sentence in sentences:
-        if (sentence in sentenceValue) and (sentenceValue[sentence] > (1.5 * average)):
-            summary += " " + sentence
+    s = []
+    for i, j in sentenceValue.items():
+        s.append(j)
 
-    word_list= summary.split( )
+    u1, u2 = stats.describe(s).minmax
+    u3, u4 = u1/stats.describe(s).mean, u2/stats.describe(s).mean
 
-    for word in word_list:
-        if ']' in word or '[' in word:
-            word_list.remove(word)
+    l1 = (u4 - u3) - 0.1
+    l2 = (u4 - u3) - 0.2
 
-    final_summary = ''
+    if length == 'short':
+      while True:
+        summary = ''
+        for sentence in sentences:
+            if (sentence in sentenceValue) and (sentenceValue[sentence] > (l1 * average)):
+                summary += " " + sentence
 
-    for word in word_list:
-        final_summary+= word + " " 
-    return final_summary
+        word_list= summary.split( )
+
+        for word in word_list:
+            if ']' in word or '[' in word:
+                word_list.remove(word)
+
+        final_summary = ''
+
+        for word in word_list:
+            final_summary+= word + " "
+
+        th = len(final_summary.split())/len(text.split())
+        if (th >= 0.15) and (th <= 0.25):
+            break
+        elif (th >= 0.01) and (th <= 0.15):
+            l1 -= 0.02
+        elif (th >= 0.25) and (th <= 0.35):
+            l1 += 0.02
+        elif (th >= 0.35) and (th <= 0.5):
+            l1 += 0.05
+        elif (th >= 0.5) and (th <= 0.7):
+            l1 += 0.1
+        elif (th >= 0.7) and (th <= 1):
+            l1 += 0.1
+      return final_summary
+    
+    if length == 'long':
+      while True:
+        summary = ''
+        for sentence in sentences:
+            if (sentence in sentenceValue) and (sentenceValue[sentence] > (l2 * average)):
+                summary += " " + sentence
+
+        word_list= summary.split( )
+
+        for word in word_list:
+            if ']' in word or '[' in word:
+                word_list.remove(word)
+
+        final_summary = ''
+
+        for word in word_list:
+            final_summary+= word + " "
+        th = len(final_summary.split())/len(text.split())
+        if (th >= 0.25) and (th <= 0.35):
+            break
+        elif (th >= 0.01) and (th <= 0.1):
+            l2 -= 0.1
+        elif (th >= 0.1) and (th <= 0.25):
+            l2 -= 0.05
+        elif (th >= 0.35) and (th <= 0.5):
+            l2 += 0.05
+        elif (th >= 0.5) and (th <= 0.7):
+            l2 += 0.1
+        elif (th >= 0.7) and (th <= 1):
+            l2 += 0.1
+      return final_summary
