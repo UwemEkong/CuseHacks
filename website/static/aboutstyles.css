@@ -1,0 +1,63 @@
+body,html
+{
+    margin:0px;
+    padding:0px;
+    background-color: #F4F8F9;
+}
+
+header
+{
+    width:100%;
+    height:65px;
+    background-color: #07244F;
+}
+
+h1
+{
+    position: absolute;
+    padding: 3px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Molengo;
+    color: #FFFFFF;
+}
+
+span
+{
+    color: #FFFFFF;
+}
+
+ul
+{
+    width: auto;
+    float: right;
+    margin-top: 8px;
+}
+
+li
+{
+    display: inline-block;
+    padding: 15px 30px;
+}
+
+a
+{
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Molengo;
+    font-size: 20px;
+}
+
+a:hover
+{
+    color: #F4F8F9;
+    transition: 0.5s;
+}
+
+img{
+    width: 100%;
+    margin-top: -16px;
+}
+
