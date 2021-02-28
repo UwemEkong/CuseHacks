@@ -5,19 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title> Speed Reader</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='resultsstyles.css') }}">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Molengo"/>
     </head>
-    <header>
-        <h1><img src="{{url_for('static', filename='dashes.svg')}}" /><span> SPEED READER</span></h1>
-       <!-- <img src="{{url_for('static', filename='dashes.svg')}}" />-->
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="howitworks">How It Works</a></li>
-                    <li><a href="aboutus">About Us</a></li>                
-                </ul>
-            </nav>          
 
-    </header>
+
+        <nav class="navbar">
+            <span id="navb"><a href="/">Home</a>
+            <a href="/howitworks" id='hiw'>How It Works</a>
+            <a href="/aboutus" id='aboutus'>About Us</a></span>
+            <img src="{{url_for('static', filename='logo_sr.png')}}" />
+        </nav>  
+
+
     <title></title>
     <body>
         <h2 style="color:black;text-align:center">Summarized Text</h1>  
