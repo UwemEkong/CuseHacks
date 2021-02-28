@@ -4,11 +4,24 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title> Speed Reader</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/resultsstyles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='resultsstyles.css') }}">
     </head>
+    <header>
+        <h1><img src="{{url_for('static', filename='dashes.svg')}}" /><span> SPEED READER</span></h1>
+       <!-- <img src="{{url_for('static', filename='dashes.svg')}}" />-->
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="howitworks">How It Works</a></li>
+                    <li><a href="aboutus">About Us</a></li>                
+                </ul>
+            </nav>          
+
+    </header>
     <title></title>
     <body>
-        <p>Results Page</p>
+        <h2 style="color:black;text-align:center">Summarized Text</h1>  
+        <p style="margin:5px">{{summary}}</p>  
     <script type="text/javascript" src="{{ url_for('static', filename='results.js') }}">
     </script>
     </body>
