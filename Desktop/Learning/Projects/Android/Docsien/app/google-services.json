@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "685164998031",
+    "project_id": "docsien",
+    "storage_bucket": "docsien.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685164998031:android:914543cfbe0bef34306ffa",
+        "android_client_info": {
+          "package_name": "com.example.docsien"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685164998031-9r6ar15t165sv7mi9hbqetutf08aciob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2WOwpDu9IuGkiN4z2TZhw0y9RnLZ9Zaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685164998031-9r6ar15t165sv7mi9hbqetutf08aciob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
