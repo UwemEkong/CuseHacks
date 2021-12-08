@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colors to appy in view -->
+
+    <color name="notification_bar">@color/dark_blue</color>
+
+    <color name="navigation_bar">@color/dark_blue</color>
+    <color name="icon_selected">@color/blue_white</color>
+    <color name="icon_unselected">@color/dark_gray</color>
+
+    <color name="card_layout">@color/white</color>
+    <color name="item_background">@color/dark_gray</color>
+
+    <color name="button_primary">@color/deep_blue</color>
+
+    <color name="text">@color/gray</color>
+    <color name="text_secondary">@color/blue_white</color>
+
+
+
+    <!-- General palettes -->
+    <color name="deep_blue">#04326C</color>
+    <color name="dark_blue">#054291</color>
+    <color name="blue_white">#F7FAFF</color>
+    <color name="dark_gray">#151616</color>
+
+    <color name="light_blue">#054291</color>
+    <color name="sky_blue">#E3EAF5</color>
+
+    <color name="gray">#636363</color>
+    <color name="off_white">#F5F5F5</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+</resources>

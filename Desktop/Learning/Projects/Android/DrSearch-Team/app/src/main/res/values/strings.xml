@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DoctorSearchApp</string>
+
+    <string name="search_hint">Find a doctor</string>
+
+    <string-array name="usernameArray">
+        <item>USER123</item>
+        <item>USER133</item>
+        <item>USER132</item>
+        <item>USER323</item>
+        <item>USER543</item>
+    </string-array>
+
+    <string-array name="reviewsArray">
+        <item>This place was amazing!! I would recomend it to anyone trying to find an amazing doctor :)</item>
+        <item>This place was a chill  and the service was amazing!</item>
+        <item>This place was alright</item>
+        <item>Would definitely recommend</item>
+        <item>10/10 location the best spot I have been too!</item>
+    </string-array>
+
+</resources>

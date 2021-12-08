@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ComposeFragment">
+
+    <ImageView
+        android:id="@+id/profilePictureIV"
+        android:layout_width="114dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="21dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:src="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/tvReviewDescription"
+        android:layout_width="333dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/profilePictureIV"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="40dp"
+        android:background="#CACEF2"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Write a review ..."
+        android:inputType="textMultiLine"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:textColor="#101010"
+        android:textColorHint="#000000" />
+
+    <Button
+        android:id="@+id/postBT"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvReviewDescription"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="39dp"
+        android:text="POST"
+        app:cornerRadius="30dp" />
+
+</RelativeLayout>
